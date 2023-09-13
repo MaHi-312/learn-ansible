@@ -5,7 +5,7 @@
       ansible.builtin.debug:
          msg: hello world
 
-    - name: demo on vars
+    - name: Demo on vars
       hosts: localhost
       vars:
         url: example.com
