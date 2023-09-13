@@ -16,7 +16,7 @@
 
 # given the variable in double quotes,good to give variable in double/single quotes,because it will fail in some scenarios if quotes are not provided
 #in the key: value,if the value is just variable or if the values starts with variable then it will fail
-- name: Demo on vars
+- name: Demo on task level vars
   hosts: localhost
 
   tasks:
