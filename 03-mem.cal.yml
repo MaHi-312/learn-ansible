@@ -11,5 +11,5 @@
 
     - name: print free variable
       ansible.builtin.set_fact:
-        total: "{{ free[1] }}"
-        free: "{{ free[3] }}"
+        total: "{{ FREE[1] }}"
+        free: "{{ FREE[3] }}"
