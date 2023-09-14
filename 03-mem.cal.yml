@@ -1,0 +1,9 @@
+- name: print used Memory
+  hosts:
+  tasks:
+    - name: Get Memory
+      ansible.builtin.shell: free | grep Mem
+      register: free
+    - name: print free variable
+      ansible.builtin.debug:
+        msg: "{{free}}"
