@@ -13,6 +13,7 @@
       ansible.builtin.set_fact:
         total: "{{ FREE[1] }}"
         free: "{{ FREE[3] }}"
+        used_mem: "{{ 100 - (free[1]|int / free[3]|int * 100) }}"
 
     - name: print free output
       ansible.builtin.debug:
