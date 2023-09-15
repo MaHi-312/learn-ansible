@@ -17,4 +17,4 @@
 
     - name: print free output
       ansible.builtin.debug:
-        msg: "{{ free |int / total |int * 100 }}"
+        msg: "{{ used_mem }}"
