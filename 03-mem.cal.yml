@@ -10,11 +10,23 @@
         FREE: "{{free.stdout | split(' ') }}"
 
     - name: print free variable
-      ansible.builtin.set_fact:
-        total: "{{ FREE[1] }}"
-        free: "{{ FREE[3] }}"
-        used_mem: "{{ 100 - (FREE[3]|int / FREE[1]|int * 100) }}"
+      used_mem: "{{ 100 - (FREE[3]|int / FREE[1]|int * 100) }}"
 
     - name: print free output
       ansible.builtin.debug:
         msg: "{{ used_mem }}"
+
+    - name: memory good
+      ansible.builtin.debug:
+        msg: memory good
+      when: used_mem |int <50
+
+    - name: memory orange
+      ansible.builtin.debug:
+        msg: memory good
+      when: used_mem |int > 50 and used_mem |int <70
+
+    - name: memory red
+      ansible.builtin.debug:
+        msg: memory red
+      when: used_mem |int >70
