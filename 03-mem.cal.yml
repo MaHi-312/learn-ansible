@@ -1,4 +1,4 @@
-- name: print used Memory
+- name: print used memory
   hosts: localhost
   tasks:
     - name: Get Memory
@@ -7,7 +7,7 @@
 
     - name: set a fact
       ansible.builtin.set_fact:
-        FREE: "{{free.stdout | split(' ') }}"
+        FREE: "{{ free.stdout | split(' ') }}"
 
     - name: set a fact
       ansible.builtin.set_fact:
@@ -25,9 +25,9 @@
     - name: Memory Orange
       ansible.builtin.debug:
         msg: Memory Good
-      when: used_mem |int > 50 and used_mem |int <70
+      when: used_mem|int > 50 and used_mem|int < 70
 
     - name: Memory Red
       ansible.builtin.debug:
         msg: Memory Red
-      when: used_mem |int >70
+      when : used_mem|int > 70
