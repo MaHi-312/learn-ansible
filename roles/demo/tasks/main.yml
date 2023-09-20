@@ -3,7 +3,7 @@
     msg: "URL = {{ URL }}"
 
 - name: copy file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: test.txt
     dest: /tmp/test.txt
 
